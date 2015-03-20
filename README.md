@@ -6,6 +6,7 @@ Para propósitos del libro [AngularJS Paso a Paso](https://leanpub.com/angularjs
 
 * [http://nodejs.org](NodeJS)
 * [http://bower.io](Bower)
+* [https://www.mongodb.org](MongoDB)
 
 ## Instalando dependencias
 Para instalar las dependencias abrimos la consola y vamos hasta la carpeta donde tenemos el servidor. Ejecutamos el comando `npm install` y esperamos a que termine de instalar. Cuando **npm** finalice ejecutará **bower** para gestionar las librerías.
