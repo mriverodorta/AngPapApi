@@ -201,6 +201,6 @@ app.get('*', function (req, res) {
 app.set('port', appPort);
 
 //Inicio el servidor para esperar peticiones
-app.listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), function () {
     console.log('Servidor listo y esperando conexiones en el puerto: ' + server.address().port);
 });
