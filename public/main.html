@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Api Ejemplo del libro AngularJS Paso a Paso</title>
+  <base href="/">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" ng-controller="MensajesCtrl">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Mensajes</h2>
+      <table class="table table-hover">
+        <thead>
+        <tr><th>Usuario</th><th colspan="2">Mensaje</th></tr>
+        </thead>
+        <tbody >
+        <tr ng-repeat="mensaje in mensajes">
+          <td>{{mensaje.usuario}}</td><td style="cursor: pointer"  ng-click="seleccion($index)">{{mensaje.mensaje}}</td>
+          <td><a ng-click="remove($index)"><i class="glyphicon glyphicon-minus"></i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <div class="col-md-12">
+        <h2>Nuevo mensaje</h2>
+        <form class="form-horizontal" name="nuevoMensaje" role="form" ng-submit="nuevo()">
+          <div class="form-group">
+            <input type="text" ng-model="msg.usuario" class="form-control" placeholder="Usuario">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" ng-model="msg.mensaje" rows="5" placeholder="Mensaje"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12" ng-show="actualizando">
+        <h2>Actualizar mensaje</h2>
+        <form class="form-horizontal" role="form" ng-submit="act.$update()">
+          <div class="form-group">
+            <input type="text" ng-model="act.usuario" class="form-control" placeholder="Usuario">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" ng-model="act.mensaje" rows="5" placeholder="Mensaje"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-resource/angular-resource.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
